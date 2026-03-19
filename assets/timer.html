@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -51,5 +52,18 @@
       }, 300);
     </script>
   </svg>
+
+  <script>
+  function sendFrame() {
+    html2canvas(document.body, { backgroundColor: null }).then((canvas) => {
+      window.parent.postMessage(
+        { type: 'overlay-frame', imageData: canvas.toDataURL('image/png') },
+        '*'
+      );
+    });
+    setTimeout(sendFrame, 1000 / 30); // 30fps
+  }
+  window.addEventListener('load', sendFrame);
+</script>
 </body>
 </html>
