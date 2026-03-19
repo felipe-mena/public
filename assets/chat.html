@@ -1,245 +1,60 @@
-Skip to:
-Top Bar
-Sidebar
-Main Content
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --kick-green: #53fc18;
+            --kick-bg: #0b0e0f;
+            --kick-hover: #191f23;
+            --border: #24272c;
+        }
+
+        body { 
+            background-color: #1a1d20; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: 'Inter', -apple-system, sans-serif; 
+        }
+
+        .kick-chat {
+            width: 340px;
+            height: 720px;
+            background: var(--kick-bg);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .header { 
+            padding: 16px; 
+            border-bottom: 1px solid var(--border); 
+            color: white; 
+            font-weight: 800; 
+            font-size: 13px; 
+            letter-spacing: 0.5px;
+        }
+
+        .feed-window {
+            flex-grow: 1;
+            position: relative;
+            overflow: hidden;
+            background: var(--kick-bg);
+        }
+
+        /* The container that actually moves */
+        .scroller {
+            display: flex;
+            flex-direction: column;
+            /* Moves the list up. Adjust "steps" to match number of unique messages */
+            animation: chatJump 30s steps(20) infinite;
+        }
 
-
-
-Search
-
-Create
-
-Ask Rovo
-
-9+
-
-
-
-Spaces
-Kick Video and Ads
-
-VAP-200
-
-VAP-232
-
-
-POC- Include HTML/SVG on Web GoLive
-
-
-Description
-• Unsaved changes
-
-Hey @Felipe Mena 
-Could I ask you to try and work from something dynamic, the goal is in time to put like scores of football or stake pricing odds over our content
-
-Propose you include buttons to let creators toggle three items like chat (right), timer (bottom left) and kick logo 
-
-
-Attachments
-3
-
-
-chat.html
-19 Mar 2026, 02:47 pm
-
-
-Fake Chat.svg
-19 Mar 2026, 02:44 pm
-
-timer.html
-18 Mar 2026, 04:43 pm
-
-Linked work items
-
-Add linked work item
-
-Activity
-
-All
-
-Comments
-
-History
-
-Work log
-
-Approvals
-
-
-
-Add a comment…
-
-Suggest a reply...
-
-Status update...
-
-Thanks...
-Pro tip: press 
-M
- to comment
-
-Jeremy Brown
-
-yesterday
-@Felipe Mena try the timer.html attached. 
-
-
-thumbs up
-1
-
-
-Reply
-
-Felipe Mena
-
-
-yesterday
-I’ll put together a v2 that uses dynamic content from a URL, which should help us test a range of scenarios.
-Let me know if you have any other ideas for populating the overlay slots in the canvas.
-
-
-
-
-Reply
-
-Edit
-
-Delete
-
-2
-
-
-
-In Progress
-
-
-Improve Sub-task
-Details
-Assignee
-
-
-
-Felipe Mena
-Reporter
-
-
-
-Jeremy Brown
-Labels
-
-
-None
-Due date
-
-
-None
-Start date
-
-
-
-None
-Priority
-
-
-
-Medium
-Parent
-
-
-
-Epic icon
-VAP-200 Web GoLive POC
-Development
-
-Connect development tools
-Open with VS Code
-Create branch
-
-
-Create commit
-More fields
-Original estimate, Time tracking, Components, Fix versions, Blocked Reason
-Automation
-Rule executions
-Created yesterday
-Updated 5 hours ago
-
-
-chat.html
-html · 5 KB
-
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
         .msg {
             padding: 10px 16px;
             font-size: 13px;
