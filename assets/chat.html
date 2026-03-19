@@ -1,0 +1,314 @@
+Skip to:
+Top Bar
+Sidebar
+Main Content
+
+
+
+Search
+
+Create
+
+Ask Rovo
+
+9+
+
+
+
+Spaces
+Kick Video and Ads
+
+VAP-200
+
+VAP-232
+
+
+POC- Include HTML/SVG on Web GoLive
+
+
+Description
+• Unsaved changes
+
+Hey @Felipe Mena 
+Could I ask you to try and work from something dynamic, the goal is in time to put like scores of football or stake pricing odds over our content
+
+Propose you include buttons to let creators toggle three items like chat (right), timer (bottom left) and kick logo 
+
+
+Attachments
+3
+
+
+chat.html
+19 Mar 2026, 02:47 pm
+
+
+Fake Chat.svg
+19 Mar 2026, 02:44 pm
+
+timer.html
+18 Mar 2026, 04:43 pm
+
+Linked work items
+
+Add linked work item
+
+Activity
+
+All
+
+Comments
+
+History
+
+Work log
+
+Approvals
+
+
+
+Add a comment…
+
+Suggest a reply...
+
+Status update...
+
+Thanks...
+Pro tip: press 
+M
+ to comment
+
+Jeremy Brown
+
+yesterday
+@Felipe Mena try the timer.html attached. 
+
+
+thumbs up
+1
+
+
+Reply
+
+Felipe Mena
+
+
+yesterday
+I’ll put together a v2 that uses dynamic content from a URL, which should help us test a range of scenarios.
+Let me know if you have any other ideas for populating the overlay slots in the canvas.
+
+
+
+
+Reply
+
+Edit
+
+Delete
+
+2
+
+
+
+In Progress
+
+
+Improve Sub-task
+Details
+Assignee
+
+
+
+Felipe Mena
+Reporter
+
+
+
+Jeremy Brown
+Labels
+
+
+None
+Due date
+
+
+None
+Start date
+
+
+
+None
+Priority
+
+
+
+Medium
+Parent
+
+
+
+Epic icon
+VAP-200 Web GoLive POC
+Development
+
+Connect development tools
+Open with VS Code
+Create branch
+
+
+Create commit
+More fields
+Original estimate, Time tracking, Components, Fix versions, Blocked Reason
+Automation
+Rule executions
+Created yesterday
+Updated 5 hours ago
+
+
+chat.html
+html · 5 KB
+
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+        .msg {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #efefef;
+            line-height: 1.4;
+            min-height: 20px;
+        }
+
+        .msg:hover { background: var(--kick-hover); }
+
+        .user { font-weight: 700; margin-right: 6px; }
+        .green { color: var(--kick-green); }
+        .blue { color: #00e5ff; }
+        .purple { color: #a335ee; }
+        .orange { color: #ff9100; }
+        .badge { background: var(--kick-green); width: 14px; height: 14px; display: inline-block; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+
+        @keyframes chatJump {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-1000px); } /* Adjust based on content height */
+        }
+
+        .footer { padding: 15px; border-top: 1px solid var(--border); background: var(--kick-bg); }
+        .input-sim { 
+            background: #191f23; 
+            padding: 12px; 
+            border-radius: 6px; 
+            color: #707070; 
+            font-size: 13px; 
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+<div class="kick-chat">
+    <div class="header">CHAT</div>
+    <div class="feed-window">
+        <div class="scroller">
+            <div class="msg"><span class="badge"></span><span class="user green">ModBot:</span>Welcome to the stream! Keep it PMA.</div>
+            <div class="msg"><span class="user blue">X_Slayer_X:</span>LFG!!! 💚</div>
+            <div class="msg"><span class="user orange">DonoKing:</span>Did you see that shot?!</div>
+            <div class="msg"><span class="user purple">VibeCheck:</span>W stream today fr</div>
+            <div class="msg"><span class="user green">Gamer77:</span>KICK IS KING</div>
+            <div class="msg"><span class="user blue">X_Slayer_X:</span>CLIP THATTTTT</div>
+            <div class="msg"><span class="user orange">DonoKing:</span>LOL NO WAY</div>
+            <div class="msg"><span class="user purple">VibeCheck:</span>? ? ? ? ? ? ?</div>
+            <div class="msg"><span class="user green">Gamer77:</span>HE'S CRACKED</div>
+            <div class="msg"><span class="user blue">X_Slayer_X:</span>actually insane movement</div>
+            <div class="msg"><span class="badge"></span><span class="user green">ModBot:</span>Don't forget to follow the channel!</div>
+            <div class="msg"><span class="user blue">X_Slayer_X:</span>WE GOING UP</div>
+            <div class="msg"><span class="user orange">DonoKing:</span>$50 says he wins this</div>
+            <div class="msg"><span class="user purple">VibeCheck:</span>EZ EZ EZ EZ</div>
+            <div class="msg"><span class="user green">Gamer77:</span>LMAOOOOO</div>
+            <div class="msg"><span class="user blue">X_Slayer_X:</span>SHEESH</div>
+            <div class="msg"><span class="user orange">DonoKing:</span>massive dub</div>
+            <div class="msg"><span class="user purple">VibeCheck:</span>Check the discord guys</div>
+            <div class="msg"><span class="user green">Gamer77:</span>10/10 content</div>
+            <div class="msg"><span class="user blue">X_Slayer_X:</span>RIP Headphones</div>
+            <div class="msg"><span class="badge"></span><span class="user green">ModBot:</span>Welcome to the stream! Keep it PMA.</div>
+            <div class="msg"><span class="user blue">X_Slayer_X:</span>LFG!!! 💚</div>
+            <div class="msg"><span class="user orange">DonoKing:</span>Did you see that shot?!</div>
+            <div class="msg"><span class="user purple">VibeCheck:</span>W stream today fr</div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="input-sim">Send a message</div>
+    </div>
+</div>
+
+</body>
+</html>
