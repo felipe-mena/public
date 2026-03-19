@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Counter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .counter-container {
+      text-align: center;
+    }
+
+    .counter {
+      font-size: 10rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      position: relative;
+      display: inline-block;
+      min-width: 250px;
+    }
+
+    .counter.animate {
+      animation: pulse 0.4s ease-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        color: #fff;
+      }
+      50% {
+        transform: scale(1.15);
+        color: #00d9ff;
+        text-shadow: 0 0 50px rgba(0, 217, 255, 0.8);
+      }
+      100% {
+        transform: scale(1);
+        color: #fff;
+      }
+    }
+
+    .label {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-container">
+    <div class="label">Counter</div>
+    <div class="counter" id="counter">0</div>
+  </div>
+
+  <script>
+    let count = 0;
+    const counterEl = document.getElementById('counter');
+
+    function updateDisplay() {
+      count++;
+      counterEl.textContent = count;
+      counterEl.classList.remove('animate');
+      void counterEl.offsetWidth;
+      counterEl.classList.add('animate');
+    }
+
+    setInterval(updateDisplay, 1000);
+  </script>
+</body>
+</html>
